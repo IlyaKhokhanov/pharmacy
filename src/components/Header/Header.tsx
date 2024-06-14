@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
 import cartIcon from '../../assets/icons/cart.svg';
 import userIcon from '../../assets/icons/user.svg';
@@ -19,63 +19,74 @@ function Header() {
 
   return (
     <header className="header">
-      <Link className="header-logo" to="/" onClick={() => toggleMenu()}>
+      <NavLink
+        className="header-logo"
+        to="/"
+        onClick={() => {
+          if (menuActive) toggleMenu();
+        }}
+      >
         <img className="header-logo-img" src={logo} alt="" />
-        <h2 className="header-logo-text">Medicines</h2>
-      </Link>
+        <div className="header-logo-text">Medicines</div>
+      </NavLink>
       <nav className="header-menu">
         <ul
           className={`header-menu--list ${menuActive ? 'header-menu--list--active' : ''}`}
         >
           <li className="header-list--item">
-            <Link
+            <NavLink
+              className="header-link"
               to="/"
               onClick={() => {
                 if (menuActive) toggleMenu();
               }}
             >
               На главную
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
+              className="header-link"
               to="/catalog"
               onClick={() => {
                 if (menuActive) toggleMenu();
               }}
             >
               Каталог
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
+              className="header-link"
               to="/about"
               onClick={() => {
                 if (menuActive) toggleMenu();
               }}
             >
               О компании
-            </Link>
+            </NavLink>
           </li>
         </ul>
 
         <div className="header-icons-wrap">
-          <Link
+          <NavLink
+            className="header-icon-link"
             to="/"
             onClick={() => {
               if (menuActive) toggleMenu();
             }}
           >
             <img className="header-icon" src={cartIcon} alt="Корзина" />
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
+            className="header-icon-link"
             to="/"
             onClick={() => {
               if (menuActive) toggleMenu();
             }}
           >
-            <img className="header-icon" src={userIcon} alt="Вход" />
-          </Link>
+            <img className="header-icon" src={userIcon} alt="Кабинет" />
+          </NavLink>
         </div>
         <button
           className={`header-burger ${menuActive ? 'header-burger--active' : ''}`}
