@@ -1,5 +1,5 @@
 function Catalog() {
-  return <h1>Catalog</h1>;
+  return <div className="wrapper">Catalog</div>;
 }
 
 export default Catalog;

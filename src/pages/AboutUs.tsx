@@ -1,5 +1,5 @@
 function AboutUs() {
-  return <h1>Home</h1>;
+  return <div className="wrapper">About us</div>;
 }
 
 export default AboutUs;

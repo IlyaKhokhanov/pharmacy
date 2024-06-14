@@ -1,6 +1,18 @@
+@import './styles/variables';
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: #e2e2e2;
+  color: #555;
+}
+
+#root {
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 * {

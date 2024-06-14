@@ -1,0 +1,101 @@
+@import './../../styles/variables';
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &-img {
+      height: 50px;
+    }
+
+    &-text {
+      color: $gray-color;
+      font-size: 22px;
+    }
+  }
+
+  &-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    &--list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      @media (max-width: 650px) {
+        position: fixed;
+        flex-direction: column;
+        justify-content: start;
+        gap: 40px;
+        height: 100%;
+        width: 100%;
+        top: 71px;
+        left: 100%;
+        padding-top: 200px;
+        font-size: 30px;
+        background: rgb(255, 255, 255, 0.95);
+        transition: left 0.3s linear;
+      }
+
+      &--active {
+        left: 0;
+      }
+
+      a {
+        color: $gray-color;
+      }
+    }
+  }
+
+  &-icons-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &-icon {
+    height: 24px;
+  }
+
+  &-burger {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 5px;
+    transition: transform 0.3s linear;
+
+    @media (max-width: 650px) {
+      display: flex;
+    }
+
+    &--active {
+      transform: rotate(90deg);
+    }
+
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: $green-color;
+    }
+  }
+}
