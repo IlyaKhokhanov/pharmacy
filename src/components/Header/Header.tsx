@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
-import cartIcon from '../../assets/icons/cart.svg';
-import userIcon from '../../assets/icons/user.svg';
-import logo from '../../assets/icons/logo.png';
+import cartIcon from '~/assets/icons/cart.svg';
+import userIcon from '~/assets/icons/user.svg';
+import logo from '~/assets/icons/logo.png';
 
 function Header() {
   const [menuActive, setMenuActive] = useState(false);
